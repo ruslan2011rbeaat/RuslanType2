@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuslanType - تدريب على الكتابة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="ruslan">Ruslan</span><span class="type">Type</span></h1>
+            <div class="header-controls">
+                <div class="language-switch">
+                    <button id="arBtn" class="lang-btn active">العربية</button>
+                    <button id="enBtn" class="lang-btn">English</button>
+                </div>
+                <div class="mode-toggle">
+                    <span id="modeText">الوضع الليلي</span>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-value" id="wpm">0</div>
+                <div class="stat-label">ك/د</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="accuracy">0</div>
+                <div class="stat-label">الدقة</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="time">90</div>
+                <div class="stat-label">ثانية</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="tests">0</div>
+                <div class="stat-label" id="testsLabel">اختبارات</div>
+            </div>
+        </div>
+
+        <div class="typing-test">
+            <div class="text-display" id="textDisplay"></div>
+            <textarea id="textInput" placeholder="اضغط هنا لبدء الكتابة..." autofocus></textarea>
+        </div>
+
+        <div class="controls">
+            <button id="restartBtn" class="btn">إعادة</button>
+            <select id="timeSelect" class="btn">
+                <option value="30">30 ثانية</option>
+                <option value="60">60 ثانية</option>
+                <option value="90" selected>90 ثانية</option>
+                <option value="120">120 ثانية</option>
+            </select>
+        </div>
+
+        <div class="results-history hidden" id="resultsHistory">
+            <h2 id="historyTitle">سجل النتائج</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-lang="ar">العربية</button>
+                <button class="tab-btn" data-lang="en">English</button>
+            </div>
+            <div class="history-content">
+                <div class="history-table" id="arHistory"></div>
+                <div class="history-table hidden" id="enHistory"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>تم التطوير بواسطة <strong>Ruslan</strong> &copy; <span id="year"></span></p>
+            <p>للتواصل: <a href="mailto:ruslanrbeaat2011@gmail.com">ruslanrbeaat2011@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <div class="result-popup hidden" id="resultPopup">
+        <div class="popup-content animate_animated animate_bounceIn">
+            <h2 id="resultTitle">نتيجة الاختبار</h2>
+            <div class="result-stats">
+                <div>
+                    <span id="resultWpm">0</span>
+                    <small>ك/د</small>
+                </div>
+                <div>
+                    <span id="resultAccuracy">0</span>
+                    <small>الدقة</small>
+                </div>
+                <div>
+                    <span id="resultLang">العربية</span>
+                    <small>اللغة</small>
+                </div>
+            </div>
+            <button id="closePopup" class="btn">متابعة</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
